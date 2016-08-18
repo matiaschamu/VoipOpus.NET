@@ -127,6 +127,7 @@ namespace OpusDemo
                 int len;
                 byte[] buff = _encoder.Encode(segment, segment.Length, out len);
                 _bytesSent += (ulong)len;
+				Console.WriteLine(len);
                 buff = _decoder.Decode(buff, len, out len);
                 _playBuffer.AddSamples(buff, 0, len);
             }
